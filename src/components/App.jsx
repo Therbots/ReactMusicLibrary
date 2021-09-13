@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import MusicTable from './MusicTable/MusicTable';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+
+         }
     }
 
     componentDidMount() {
@@ -15,12 +18,14 @@ class App extends Component {
         let response = await axios.get('http://127.0.0.1:8000/music/');
         this.setState({
             songs: response.data
-        })
+        });
     }
 
     render() { 
         return ( 
-            <h1>hello world!</h1>
+            <React.Fragment>
+                <MusicTable music={this.state.songs} />
+            </React.Fragment>
          );
     }
 }
