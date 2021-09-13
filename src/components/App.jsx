@@ -21,10 +21,18 @@ class App extends Component {
         });
     }
 
+    handleDeleteClick = (songId) => {
+        axios.delete(`http://127.0.0.1:8000/music/${songId}/`)
+        .then(() => this.setState({status: 'Delete successful'}));
+        
+    }
+
     render() { 
         return ( 
             <React.Fragment>
-                <MusicTable music={this.state.songs} />
+                <MusicTable music={this.state.songs} 
+                 handleDeleteClick={this.handleDeleteClick}
+                />
             </React.Fragment>
          );
     }

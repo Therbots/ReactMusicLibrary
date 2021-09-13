@@ -16,6 +16,7 @@ const MusicTable = (props) => {
                     <td>{item.artist}</td>
                     <td>{item.album}</td>
                     <td>{item.release_date}</td>
+                    <button type="button" onClick={() => props.handleDeleteClick(item.id)}>Delete</button>
                 </tr>
                 ))}
         </table>
