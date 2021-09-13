@@ -33,6 +33,7 @@ class App extends Component {
                 <MusicTable music={this.state.songs} 
                  handleDeleteClick={this.handleDeleteClick}
                 />
+                <SongForm />
             </React.Fragment>
          );
     }
