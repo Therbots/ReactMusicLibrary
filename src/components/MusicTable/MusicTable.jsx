@@ -4,13 +4,14 @@ import './MusicTable.css';
 const MusicTable = (props) => {
     return (
         <center>
-        <table>
+        <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
                     <th>Title</th>
                     <th>Artist</th>
                     <th>Album</th>
                     <th>Release Date</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
