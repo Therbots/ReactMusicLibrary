@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MusicTable from './MusicTable/MusicTable';
+import SongForm from './SongForm/SongForm';
 
 class App extends Component {
     constructor(props) {
@@ -27,13 +28,19 @@ class App extends Component {
         
     }
 
+    addNewSong = async () => {
+        console.log('clicked')
+       axios.post('http://127.0.0.1:8000/music/')
+       .then(() => this.setState({status: 'Added successful'}));
+    }
+
     render() { 
         return ( 
             <React.Fragment>
                 <MusicTable music={this.state.songs} 
                  handleDeleteClick={this.handleDeleteClick}
                 />
-                <SongForm />
+                <SongForm addNewSong={this.addNewSong} />
             </React.Fragment>
          );
     }
