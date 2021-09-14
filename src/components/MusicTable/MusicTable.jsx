@@ -3,6 +3,7 @@ import './MusicTable.css';
 
 const MusicTable = (props) => {
     return (
+        <center>
         <table>
             <thead>
                 <tr>
@@ -24,6 +25,7 @@ const MusicTable = (props) => {
                     ))}
             </tbody>
         </table>
+        </center>
     );
 }
 

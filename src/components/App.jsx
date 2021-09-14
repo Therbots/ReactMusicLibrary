@@ -3,6 +3,7 @@ import axios from 'axios';
 import MusicTable from './MusicTable/MusicTable';
 import SongForm from './SongForm/SongForm';
 import SearchBar from './SearchBar/SearchBar';
+import './App.css'
 
 class App extends Component {
     constructor(props) {
@@ -35,15 +36,19 @@ class App extends Component {
     render() { 
         const {songs, searchField} = this.state
         const filteredSongs = songs.filter((value) => {
-            return value.title.toLowerCase().includes(searchField) || value.artist.toLowerCase().includes(searchField) || value.album.toLowerCase().includes(searchField);
+            return value.title.toLowerCase().includes(searchField) || value.artist.toLowerCase().includes(searchField) || value.album.toLowerCase().includes(searchField) || value.release_date.toLowerCase().includes(searchField);
         })
         return ( 
             <React.Fragment>
-                <SearchBar placeholder="Search here..." handleChange={(event) => this.setState({searchField: event.target.value})}/>
-                <MusicTable music={filteredSongs} 
-                 handleDeleteClick={this.handleDeleteClick}
-                />
-                <SongForm />
+                <div className="body">
+                    <SearchBar placeholder="Search here..." handleChange={(event) => this.setState({searchField: event.target.value})}/>
+                    <br></br>
+                    <MusicTable music={filteredSongs} 
+                    handleDeleteClick={this.handleDeleteClick}
+                    />
+                    <br></br>
+                    <SongForm />
+                </div>
             </React.Fragment>
          );
     }

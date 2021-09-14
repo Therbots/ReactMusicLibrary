@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './SongForm.css'
 
 class SongForm extends Component {
     constructor(props) {
@@ -29,18 +30,20 @@ class SongForm extends Component {
     
     render() { 
         return ( 
+            <center>
             <form onSubmit={this.handleSubmit}>
                 <h2>Add New Song</h2>
-                <label>Title: </label>
-                <input type="text" name="title" onChange={this.handleChange} />
-                <label>Artist: </label>
-                <input type="text" name="artist" onChange={this.handleChange} />
-                <label>Album: </label>
-                <input type="text" name="album" onChange={this.handleChange} />
-                <label>Release Date: </label>
-                <input type="datetime-local" name="release_date" onChange={this.handleChange} />
+                <label className="font">Title: </label>
+                <input className="color" type="text" name="title" onChange={this.handleChange} />
+                <label className="font">Artist: </label>
+                <input className="color" type="text" name="artist" onChange={this.handleChange} />
+                <label className="font">Album: </label>
+                <input className="color" type="text" name="album" onChange={this.handleChange} />
+                <label className="font">Release Date: </label>
+                <input className="color" type="datetime-local" name="release_date" onChange={this.handleChange} />
                 <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Add Song</button>
             </form>
+            </center>
          );
     }
 }
