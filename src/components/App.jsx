@@ -28,11 +28,7 @@ class App extends Component {
         
     }
 
-    addNewSong = async () => {
-        console.log('clicked')
-       axios.post('http://127.0.0.1:8000/music/')
-       .then(() => this.setState({status: 'Added successful'}));
-    }
+   
 
     render() { 
         return ( 
@@ -40,7 +36,7 @@ class App extends Component {
                 <MusicTable music={this.state.songs} 
                  handleDeleteClick={this.handleDeleteClick}
                 />
-                <SongForm addNewSong={this.addNewSong} />
+                <SongForm />
             </React.Fragment>
          );
     }
